@@ -1,4 +1,4 @@
-import React, { FunctionComponent,} from "react";
+import React, { FunctionComponent } from "react";
 
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -14,11 +14,13 @@ import Divider from "@mui/material/Divider";
 export type UserDetailsProp = {
   menuOpen: boolean;
   toggleMenu: (open: boolean) => void;
+  selectMenuItem: (target: EventTarget) => void;
 };
 
 export const AppSideMenu: FunctionComponent<UserDetailsProp> = (props: {
   menuOpen: boolean;
   toggleMenu: any;
+  selectMenuItem: any;
 }) => {
   return (
     <div>
@@ -26,13 +28,13 @@ export const AppSideMenu: FunctionComponent<UserDetailsProp> = (props: {
         <Box
           sx={{ width: 250 }}
           role="presentation"
-          onClick={props.toggleMenu(false)}
+          // onClick={val => props.selectMenuItem(val)}
           onKeyDown={props.toggleMenu(false)}
         >
           <List>
             {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
               <ListItem key={text} disablePadding>
-                <ListItemButton>
+                <ListItemButton id={text} onClick={() => props.selectMenuItem(text)}>
                   {/* <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon> */}
@@ -44,7 +46,7 @@ export const AppSideMenu: FunctionComponent<UserDetailsProp> = (props: {
           <Divider />
           <List>
             {["All mail", "Trash", "Spam"].map((text, index) => (
-              <ListItem key={text} disablePadding>
+              <ListItem key={text} disablePadding id={text}>
                 <ListItemButton>
                   {/* <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}

@@ -7,12 +7,12 @@ export const StyledPaper = styled(Paper)({
     width: '100%',
     height: '500px', // Adjust height as needed
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'left',
     alignItems: 'center',
 });
 
 export const InvisibleButton = styled(Button)({
-  width: '20%',  // Makes the button full width of the Paper
+  width: '5%',  // Makes the button full width of the Paper
     height: '100%',  // Optional, ensures full height of the Paper
     background: 'transparent',
     border: 'none',
