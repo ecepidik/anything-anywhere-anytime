@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing app apollo provider should create apollo client with configuration 1`] = `
+<mock-apollo-provider
+  client="[object Object]"
+>
+  <div>
+    children
+  </div>
+</mock-apollo-provider>
+`;
